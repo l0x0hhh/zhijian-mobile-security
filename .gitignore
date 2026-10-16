@@ -1,0 +1,64 @@
+# 说明：忽略 Unity 生成目录、本地配置、构建产物与密钥，保留源码和 .meta。
+
+# Unity 缓存与生成目录，兼容未来位于 UnityProject/ 下的工程。
+**/[Ll]ibrary/
+**/[Tt]emp/
+**/[Oo]bj/
+**/[Ll]ogs/
+**/[Uu]ser[Ss]ettings/
+**/[Mm]emoryCaptures/
+**/[Rr]ecordings/
+**/[Bb]uild/
+**/[Bb]uilds/
+**/[Aa]ssets/AssetStoreTools/
+
+# IDE 与自动生成的工程文件。
+.vs/
+.idea/
+.vscode/
+*.csproj
+*.sln
+*.slnx
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.opendb
+*.VC.db
+*.pdb
+*.mdb
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+sysinfo.txt
+
+# 系统文件、临时文件和输出产物。
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.tmp
+*.bak
+*.log
+/tmp/
+/output/
+/artifacts/
+*.apk
+*.aab
+*.unitypackage
+
+# 本地凭据与 Android 签名材料。
+.env
+.env.*
+!.env.example
+*.keystore
+*.jks
+*.p12
+*.pfx
+*.pem
+*.key
+local.properties
+
+# 运行时存档只在设备上生成，不纳入课程工程。
+save.json
+save.json.*
