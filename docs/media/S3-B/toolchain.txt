@@ -1,0 +1,10 @@
+Production date: 2026-10-19 Asia/Shanghai
+Python: 3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]
+Pillow: 12.3.0
+NumPy: 2.3.5
+Speech: Microsoft Huihui Desktop - Chinese (Simplified), SAPI.SpVoice, Rate=1, Volume=100
+Speech format requested and read back: PCM s16le 48000 Hz mono
+Encoder: ffmpeg 9.0.2-essentials_build-www.gyan.dev; gcc 16.2.0; libx264; AAC
+Archive SHA256: 60f467265b1e312373dbcd92200c2618a74850f98d3d078e94296bb3fa2047ba
+ffmpeg.exe SHA256: 3256173f3f8bffd7df12227c68adf68025edb1832273a9530688a7bb1ed8edec
+ffprobe.exe SHA256: f0d36ecbbdd3bcfac3efa078c96c7271c2e68b3810595552ac3b7f17e9a65c52

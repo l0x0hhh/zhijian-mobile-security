@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-30",
+  "modifiedFiles": [
+    "README.md",
+    "tests/apk-inspection/ApkInspectionChecks.cs",
+    "UnityProject/Assets/Plugins/Android/ZhijianInspection.androidlib/src/com/zhijian/inspection/ApkInspectionActivity.java",
+    "UnityProject/Assets/_Project/Scripts/Bootstrap/AppRoot.cs",
+    "UnityProject/Assets/_Project/Scripts/Presentation/Inspection/ApkInspectionPresenter.cs",
+    "UnityProject/Assets/_Project/Scripts/Presentation/Investigation/InvestigationPageData.cs"
+  ],
+  "addedFiles": [
+    "docs/tasks/S6-APK流程体验优化.md",
+    "docs/qa/apk-ux-checks.json"
+  ],
+  "newAssets": 0,
+  "serializedBindingsChanged": false,
+  "protectedFilesUnchanged": 177,
+  "assetGuidCount": 233,
+  "isolatedRuntimeAssembliesCompiled": 6,
+  "androidCsharpBranchCompiled": true,
+  "javaCompiledAgainstApi": 33,
+  "independentChecksPassed": 32,
+  "testScript": "tests/apk-inspection/run.ps1",
+  "uiNativeStageAndByteCountRuntimeTested": false,
+  "unityImportExecuted": false,
+  "gradleBuildExecuted": false,
+  "androidDeviceTested": false,
+  "realReportPersistenceExecuted": false,
+  "usabilityStudyConducted": false,
+  "warnings": [
+    "Independent javac source8 bootstrap-class-path warning; deprecated compatibility APIs.",
+    "C# Inspector/JSON assigned-field CS0649 is individually excluded by the existing test script."
+  ],
+  "evidenceBoundary": "Independent checks use native inspector and report repository substitutes; device and persistent-storage behavior is still pending."
+}

@@ -1,0 +1,527 @@
+{
+  "schemaVersion": 1,
+  "id": "face-meeting",
+  "title": "换脸会议",
+  "summary": "会议视频里的负责人，让你安装陌生工具。",
+  "kind": "FaceMeeting",
+  "policyId": "face-meeting",
+  "contentVersion": 1,
+  "scoringRuleVersion": 1,
+  "defaultFeatureIntentId": "face-meeting.intent.verify",
+  "requiredSteps": [
+    "BackgroundViewed",
+    "AnyEvidenceCollected",
+    "PermissionsReviewed",
+    "VerificationSelected",
+    "RiskSelected",
+    "DispositionSelected",
+    "MediaPlayed",
+    "MediaDetected"
+  ],
+  "featureIntents": [
+    {
+      "id": "face-meeting.intent.verify",
+      "title": "核对来源"
+    }
+  ],
+  "supportedOutcomes": [
+    "Safe",
+    "MalwareFailure",
+    "JudgmentFailure"
+  ],
+  "messages": [
+    {
+      "id": "face-meeting.msg.01",
+      "sourceId": "face-meeting.source.msg.01",
+      "kind": "Text",
+      "text": "临时开个会，先看这段说明。",
+      "sender": "会议账号",
+      "mediaId": null,
+      "dispositionId": null,
+      "evidenceIds": []
+    },
+    {
+      "id": "face-meeting.msg.02",
+      "sourceId": "face-meeting.source.msg.02",
+      "kind": "Video",
+      "text": "会议说明，约 16 秒",
+      "sender": "会议账号",
+      "mediaId": "face-meeting.media.meeting",
+      "dispositionId": null,
+      "evidenceIds": [
+        "face-meeting.evidence.sync",
+        "face-meeting.evidence.edge",
+        "face-meeting.evidence.light"
+      ]
+    },
+    {
+      "id": "face-meeting.msg.03",
+      "sourceId": "face-meeting.source.download",
+      "kind": "Link",
+      "text": "从这里装轻会助手，其他版本进不来。",
+      "sender": "会议账号",
+      "mediaId": null,
+      "dispositionId": null,
+      "evidenceIds": [
+        "face-meeting.evidence.unofficial"
+      ]
+    },
+    {
+      "id": "face-meeting.msg.04",
+      "sourceId": "face-meeting.source.package",
+      "kind": "Package",
+      "text": "轻会助手.apk · 教学模拟文件",
+      "sender": "会议账号",
+      "mediaId": null,
+      "dispositionId": null,
+      "evidenceIds": []
+    },
+    {
+      "id": "face-meeting.msg.05",
+      "sourceId": "face-meeting.source.msg.05",
+      "kind": "Text",
+      "text": "安装后把短信和通讯录打开，方便同步名单。",
+      "sender": "会议账号",
+      "mediaId": null,
+      "dispositionId": null,
+      "evidenceIds": []
+    },
+    {
+      "id": "face-meeting.msg.06",
+      "sourceId": "face-meeting.source.msg.06",
+      "kind": "Text",
+      "text": "我先核对一下会议安排。",
+      "sender": "我",
+      "mediaId": null,
+      "dispositionId": null,
+      "evidenceIds": []
+    }
+  ],
+  "sources": [
+    {
+      "id": "face-meeting.source.msg.01",
+      "kind": "Message",
+      "title": "会议账号",
+      "body": "临时开个会，先看这段说明。",
+      "requiredForBackground": true,
+      "mediaId": null
+    },
+    {
+      "id": "face-meeting.source.msg.02",
+      "kind": "Message",
+      "title": "会议账号",
+      "body": "会议说明，约 16 秒",
+      "requiredForBackground": true,
+      "mediaId": null
+    },
+    {
+      "id": "face-meeting.source.download",
+      "kind": "Message",
+      "title": "会议账号",
+      "body": "https://qinghui-install.invalid/join。链接来自当前会议账号，分发方未核实；没有列入工作室的已知渠道。仅案例展示，不联网。",
+      "requiredForBackground": true,
+      "mediaId": null
+    },
+    {
+      "id": "face-meeting.source.package",
+      "kind": "Message",
+      "title": "会议账号",
+      "body": "轻会助手.apk，未知发布者，教学模拟文件。此处只有元数据，不含可执行安装包。",
+      "requiredForBackground": true,
+      "mediaId": null
+    },
+    {
+      "id": "face-meeting.source.msg.05",
+      "kind": "Message",
+      "title": "会议账号",
+      "body": "安装后把短信和通讯录打开，方便同步名单。",
+      "requiredForBackground": true,
+      "mediaId": null
+    },
+    {
+      "id": "face-meeting.source.msg.06",
+      "kind": "Message",
+      "title": "我",
+      "body": "我先核对一下会议安排。",
+      "requiredForBackground": true,
+      "mediaId": null
+    },
+    {
+      "id": "face-meeting.source.chat",
+      "kind": "Background",
+      "title": "会议聊天",
+      "body": "许岚（会议账号）要求临时开会并安装未知工具。",
+      "requiredForBackground": false,
+      "mediaId": null
+    },
+    {
+      "id": "face-meeting.source.video",
+      "kind": "Media",
+      "title": "会议视频",
+      "body": "今天临时加个会，用轻会助手参加。下载链接已经发到聊天里了。装好后打开短信和通讯录。我们马上开始，先把工具准备好。",
+      "requiredForBackground": false,
+      "mediaId": "face-meeting.media.meeting"
+    },
+    {
+      "id": "face-meeting.source.detection",
+      "kind": "Detection",
+      "title": "视频分析",
+      "body": "教学模拟：以下为预设结果，不是真实鉴定。这些异常不能单独确认身份，请核对会议来源。",
+      "requiredForBackground": false,
+      "mediaId": "face-meeting.media.meeting"
+    },
+    {
+      "id": "face-meeting.source.permissions",
+      "kind": "PermissionDeclaration",
+      "title": "访问声明",
+      "body": "轻会助手声称需要七项访问，其中短信用于自动验证入会，通讯录用于同步名单。",
+      "requiredForBackground": false,
+      "mediaId": null
+    },
+    {
+      "id": "face-meeting.source.official",
+      "kind": "Background",
+      "title": "已知工作台",
+      "body": "案例工作台未发布本次会议；已知发布渠道没有轻会助手。查看该资料不等于已选择可靠核验。",
+      "requiredForBackground": false,
+      "mediaId": null
+    },
+    {
+      "id": "face-meeting.source.original-contact",
+      "kind": "Verification",
+      "title": "原联系人",
+      "body": "原联系人回复：没有安排这场会，也没让大家装新工具。请保留消息。",
+      "requiredForBackground": false,
+      "mediaId": null
+    }
+  ],
+  "media": [
+    {
+      "id": "face-meeting.media.meeting",
+      "kind": "Video",
+      "assetLedgerId": "VID-001",
+      "transcript": "今天临时加个会，用轻会助手参加。下载链接已经发到聊天里了。装好后打开短信和通讯录。我们马上开始，先把工具准备好。",
+      "findings": [
+        {
+          "indicator": "AudioVideoSync",
+          "label": "音画同步",
+          "explanation": "嘴形与语音有错位。"
+        },
+        {
+          "indicator": "FaceEdges",
+          "label": "面部边缘",
+          "explanation": "转头时轮廓不稳定。"
+        },
+        {
+          "indicator": "Lighting",
+          "label": "光照一致性",
+          "explanation": "脸部与颈部受光不一致。"
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "face-meeting.evidence.sync",
+      "sourceId": "face-meeting.source.video",
+      "title": "语音与嘴形不同步",
+      "explanation": "对照会议视频第一段或教学检测的音画同步项。",
+      "isKey": true,
+      "scoreWeight": 10,
+      "alternativeSourceIds": [
+        "face-meeting.source.detection"
+      ],
+      "requiredSourceIds": []
+    },
+    {
+      "id": "face-meeting.evidence.edge",
+      "sourceId": "face-meeting.source.video",
+      "title": "转头时面部边缘异常",
+      "explanation": "对照会议视频转头片段或面部边缘指标。",
+      "isKey": true,
+      "scoreWeight": 10,
+      "alternativeSourceIds": [
+        "face-meeting.source.detection"
+      ],
+      "requiredSourceIds": []
+    },
+    {
+      "id": "face-meeting.evidence.light",
+      "sourceId": "face-meeting.source.video",
+      "title": "脸部与颈部光照不一致",
+      "explanation": "对照会议视频光照片段或光照一致性指标。",
+      "isKey": true,
+      "scoreWeight": 10,
+      "alternativeSourceIds": [
+        "face-meeting.source.detection"
+      ],
+      "requiredSourceIds": []
+    },
+    {
+      "id": "face-meeting.evidence.unofficial",
+      "sourceId": "face-meeting.source.download",
+      "title": "下载来源未经核实",
+      "explanation": "对照对方链接与案例工作台的已知发布渠道。",
+      "isKey": true,
+      "scoreWeight": 10,
+      "alternativeSourceIds": [],
+      "requiredSourceIds": [
+        "face-meeting.source.official"
+      ]
+    },
+    {
+      "id": "face-meeting.evidence.sensitive-request",
+      "sourceId": "face-meeting.source.permissions",
+      "title": "工具索取短信和通讯录",
+      "explanation": "权限声明要求自动读取短信并同步联系人。",
+      "isKey": false,
+      "scoreWeight": 0,
+      "alternativeSourceIds": [],
+      "requiredSourceIds": []
+    }
+  ],
+  "permissions": [
+    {
+      "id": "face-meeting.permission.camera",
+      "purpose": "视频参会",
+      "category": "Camera",
+      "scoreWeight": 4,
+      "scopes": [
+        "Full"
+      ],
+      "intentRules": [
+        {
+          "intentId": "face-meeting.intent.verify",
+          "allowedScopes": [],
+          "acceptsDenied": true,
+          "riskWeights": [
+            {
+              "scope": "Full",
+              "weight": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "face-meeting.permission.photos",
+      "purpose": "共享资料",
+      "category": "Photos",
+      "scoreWeight": 4,
+      "scopes": [
+        "SelectedPhotos",
+        "AllPhotos"
+      ],
+      "intentRules": [
+        {
+          "intentId": "face-meeting.intent.verify",
+          "allowedScopes": [],
+          "acceptsDenied": true,
+          "riskWeights": [
+            {
+              "scope": "SelectedPhotos",
+              "weight": 10
+            },
+            {
+              "scope": "AllPhotos",
+              "weight": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "face-meeting.permission.microphone",
+      "purpose": "语音参会",
+      "category": "Microphone",
+      "scoreWeight": 4,
+      "scopes": [
+        "Full"
+      ],
+      "intentRules": [
+        {
+          "intentId": "face-meeting.intent.verify",
+          "allowedScopes": [],
+          "acceptsDenied": true,
+          "riskWeights": [
+            {
+              "scope": "Full",
+              "weight": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "face-meeting.permission.contacts",
+      "purpose": "同步名单",
+      "category": "Contacts",
+      "scoreWeight": 5,
+      "scopes": [
+        "Full"
+      ],
+      "intentRules": [
+        {
+          "intentId": "face-meeting.intent.verify",
+          "allowedScopes": [],
+          "acceptsDenied": true,
+          "riskWeights": [
+            {
+              "scope": "Full",
+              "weight": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "face-meeting.permission.sms",
+      "purpose": "自动验证入会",
+      "category": "Sms",
+      "scoreWeight": 5,
+      "scopes": [
+        "Full"
+      ],
+      "intentRules": [
+        {
+          "intentId": "face-meeting.intent.verify",
+          "allowedScopes": [],
+          "acceptsDenied": true,
+          "riskWeights": [
+            {
+              "scope": "Full",
+              "weight": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "face-meeting.permission.location",
+      "purpose": "确认会场",
+      "category": "Location",
+      "scoreWeight": 4,
+      "scopes": [
+        "Full"
+      ],
+      "intentRules": [
+        {
+          "intentId": "face-meeting.intent.verify",
+          "allowedScopes": [],
+          "acceptsDenied": true,
+          "riskWeights": [
+            {
+              "scope": "Full",
+              "weight": 15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "face-meeting.permission.background",
+      "purpose": "持续同步",
+      "category": "BackgroundActivity",
+      "scoreWeight": 4,
+      "scopes": [
+        "Full"
+      ],
+      "intentRules": [
+        {
+          "intentId": "face-meeting.intent.verify",
+          "allowedScopes": [],
+          "acceptsDenied": true,
+          "riskWeights": [
+            {
+              "scope": "Full",
+              "weight": 15
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "verificationOptions": [
+    {
+      "id": "face-meeting.verify.original",
+      "text": "通过原联系方式联系负责人",
+      "reliable": true,
+      "feedback": "可靠；原联系人回复：“没有安排这场会，也没让大家装新工具。请保留消息。”"
+    },
+    {
+      "id": "face-meeting.verify.official",
+      "text": "查看已知工作台的会议安排",
+      "reliable": true,
+      "feedback": "可靠；“工作台未发布本次会议，已知渠道没有这个工具。请报告异常。”"
+    },
+    {
+      "id": "face-meeting.verify.current",
+      "text": "在当前聊天里询问",
+      "reliable": false,
+      "feedback": "不可靠；“对方仍是信息来源，不能独立确认。”"
+    },
+    {
+      "id": "face-meeting.verify.link",
+      "text": "用对方链接里的客服核验",
+      "reliable": false,
+      "feedback": "不可靠；“客服入口也由对方提供。”"
+    },
+    {
+      "id": "face-meeting.verify.face",
+      "text": "视频像本人就相信",
+      "reliable": false,
+      "feedback": "不可靠；“外貌相似不能证明身份和安装来源。”"
+    }
+  ],
+  "riskOptions": [
+    {
+      "id": "face-meeting.class.impersonation-malware",
+      "text": "冒充会议，诱导安装未知应用",
+      "isCorrect": true
+    },
+    {
+      "id": "face-meeting.class.normal",
+      "text": "正常会议工具更新",
+      "isCorrect": false
+    },
+    {
+      "id": "face-meeting.class.video-only",
+      "text": "只有视频画面故障",
+      "isCorrect": false
+    }
+  ],
+  "dispositionOptions": [
+    {
+      "id": "face-meeting.disposition.reject-report",
+      "text": "拒绝未知工具，留证并报告",
+      "kind": "RejectInstallAndReport",
+      "isCorrect": true,
+      "isImmediateFailure": false,
+      "effect": "RemoveSimulatedApp"
+    },
+    {
+      "id": "face-meeting.disposition.install-authorize",
+      "text": "安装并允许短信和通讯录",
+      "kind": "InstallUnknownPackage",
+      "isCorrect": false,
+      "isImmediateFailure": false,
+      "effect": "InstallAndGrantSensitive"
+    },
+    {
+      "id": "face-meeting.disposition.keep-installed",
+      "text": "保留安装，只关闭页面",
+      "kind": "InstallUnknownPackage",
+      "isCorrect": false,
+      "isImmediateFailure": false,
+      "effect": "None"
+    },
+    {
+      "id": "face-meeting.disposition.ask-sender",
+      "text": "继续问当前账号再决定",
+      "kind": "QuestionCurrentAccount",
+      "isCorrect": false,
+      "isImmediateFailure": false,
+      "effect": "None"
+    }
+  ]
+}

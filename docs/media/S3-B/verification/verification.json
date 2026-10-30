@@ -1,0 +1,77 @@
+{
+  "container": "MP4 / isom",
+  "durationSeconds": 16.0,
+  "width": 720,
+  "height": 1280,
+  "frames": 400,
+  "fps": "25/1",
+  "videoCodec": "h264",
+  "videoProfile": "Main",
+  "pixelFormat": "yuv420p",
+  "audioCodec": "aac",
+  "audioProfile": "LC",
+  "audioSampleRate": 48000,
+  "audioChannels": 1,
+  "fullDecodeExitCode": 0,
+  "decodedAudioSamples": 768000,
+  "sourceAudioSamples": 768000,
+  "sourceDecodedCorrelation": 0.9999688964694748,
+  "subtitleCueCount": 4,
+  "subtitleMaxEndSeconds": 15.229,
+  "subtitleCopyIdentical": true,
+  "subtitleActivityChecks": [
+    {
+      "index": 1,
+      "subtitleStart": 0.28,
+      "subtitleEnd": 3.814,
+      "decodedActiveStart": 0.34,
+      "decodedActiveEnd": 3.6933333333333334,
+      "enclosesDetectedActivity": true,
+      "text": "今天临时加个会，\n用轻会助手参加。"
+    },
+    {
+      "index": 2,
+      "subtitleStart": 4.4,
+      "subtitleEnd": 6.882,
+      "decodedActiveStart": 4.46,
+      "decodedActiveEnd": 6.7613125,
+      "enclosesDetectedActivity": true,
+      "text": "下载链接已经发到聊天里了。"
+    },
+    {
+      "index": 3,
+      "subtitleStart": 8.32,
+      "subtitleEnd": 10.771,
+      "decodedActiveStart": 8.38,
+      "decodedActiveEnd": 10.650625,
+      "enclosesDetectedActivity": true,
+      "text": "装好后打开短信和通讯录。"
+    },
+    {
+      "index": 4,
+      "subtitleStart": 12.0,
+      "subtitleEnd": 15.229,
+      "decodedActiveStart": 12.059979166666666,
+      "decodedActiveEnd": 15.108479166666667,
+      "enclosesDetectedActivity": true,
+      "text": "我们马上开始，\n先把工具准备好。"
+    }
+  ],
+  "keyframeTimes": [
+    0.52,
+    0.96,
+    4.8,
+    5.04,
+    9.44,
+    13.0
+  ],
+  "videoBytes": 424518,
+  "videoSha256": "4b9b22176b7aa8489dc16fb37d4ecc7ca9c0d7d13f57381aa5e43e78197e780d",
+  "subtitleSha256": "bd175693e7bc771876a9586315b8649222f5c945303ae6dc0b782e03b6ea473d",
+  "unityPlaybackVerified": false,
+  "androidPlaybackVerified": false,
+  "limits": [
+    "音量阈值用于检查字幕覆盖语音活动，不是逐字语音识别或人工听审。",
+    "三异常还需查看关键帧与动态播放，源码参数不是实际鉴定结果。"
+  ]
+}

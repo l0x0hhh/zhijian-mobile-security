@@ -1,0 +1,23 @@
+// 说明：使用团结编辑器配套的 Build Tools 编译 APK 检查库，并向主应用提供保留规则。
+apply plugin: 'com.android.library'
+
+android {
+    namespace 'com.zhijian.inspection'
+    compileSdkVersion 33
+    buildToolsVersion '34.0.0'
+    defaultConfig {
+        minSdkVersion 22
+        targetSdkVersion 33
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}

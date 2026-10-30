@@ -1,0 +1,16 @@
+{
+  "name": "Zhijian.Application",
+  "rootNamespace": "Zhijian.Application",
+  "references": [
+    "Zhijian.Domain"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": true
+}

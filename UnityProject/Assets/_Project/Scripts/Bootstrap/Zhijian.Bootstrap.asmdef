@@ -1,0 +1,20 @@
+{
+  "name": "Zhijian.Bootstrap",
+  "rootNamespace": "Zhijian.Bootstrap",
+  "references": [
+    "Zhijian.Domain",
+    "Zhijian.Application",
+    "Zhijian.Presentation",
+    "Zhijian.UnityUI",
+    "Zhijian.Infrastructure"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

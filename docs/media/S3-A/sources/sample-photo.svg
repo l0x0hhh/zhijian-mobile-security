@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 说明：原创教学矢量图；文字使用项目已有的 Noto Sans SC，许可见制作记录。 -->
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1280" viewBox="0 0 960 1280">
+<defs><linearGradient id="paper" x2="0" y2="1"><stop stop-color="#E6EEE8"/><stop offset="1" stop-color="#CBDDD2"/></linearGradient>
+<linearGradient id="shirt" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#375D50"/><stop offset="1" stop-color="#25483C"/></linearGradient></defs>
+<rect width="960" height="1280" fill="#F6F6F2"/>
+<rect x="48" y="140" width="864" height="1034" rx="24" fill="url(#paper)"/>
+<circle cx="480" cy="563" r="285" fill="#D9E6DC"/>
+<path d="M183 1174c9-157 27-278 127-327 53-27 99-38 170-39 71 1 117 12 170 39 100 49 118 170 127 327" fill="url(#shirt)"/>
+<path d="M415 730h130l7 106-72 94-72-94z" fill="#C99679"/>
+<path d="M408 807l72 88-82 75-49-133zM552 807l-72 88 82 75 49-133z" fill="#E9EEE7"/>
+<path d="M270 536c-12-171 39-283 205-289 174-7 239 131 219 303l-10 216-122 28-171 3-111-48z" fill="#303831"/>
+<ellipse cx="299" cy="581" rx="31" ry="54" fill="#D4A182"/><ellipse cx="661" cy="581" rx="31" ry="54" fill="#D4A182"/>
+<path d="M317 497c6-111 75-168 163-170 96 1 157 59 164 170l-10 138c-10 84-78 143-154 151-76-8-144-67-154-151z" fill="#DDB191"/>
+<path d="M304 519c-2-165 65-241 179-240 111 0 191 86 174 235-57-33-90-86-111-141-42 63-120 98-242 146z" fill="#303831"/>
+<path d="M374 553q35-17 63-2M523 551q28-15 63 2" fill="none" stroke="#3F4238" stroke-width="12" stroke-linecap="round"/>
+<ellipse cx="410" cy="587" rx="9" ry="12" fill="#303831"/><ellipse cx="550" cy="587" rx="9" ry="12" fill="#303831"/>
+<path d="M479 589l-13 65 24 2" fill="none" stroke="#BF8B70" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M438 699q42 19 84-1" fill="none" stroke="#995E53" stroke-width="8" stroke-linecap="round"/>
+<path d="M247 1038v136M713 1038v136M480 960v214" fill="none" stroke="#426657" stroke-width="5"/>
+<rect x="48" y="1074" width="864" height="100" rx="0" fill="#25483C"/>
+<path d="M48 1148v2q0 24 24 24h816q24 0 24-24v-2" fill="#25483C"/>
+<text x="48" y="103.61" font-family="Noto Sans SC" font-size="49" fill="#202923">示例照片</text>
+<text x="602" y="104.48" font-family="Noto Sans SC" font-size="32" fill="#626D64">原创虚构人物</text>
+<text x="197" y="1139.82" font-family="Noto Sans SC" font-size="38" fill="#FFFFFF">教学示意 · 非真人证件照</text>
+<text x="137" y="1241.48" font-family="Noto Sans SC" font-size="32" fill="#626D64">仅演示指定照片范围，不含真实身份资料</text>
+</svg>

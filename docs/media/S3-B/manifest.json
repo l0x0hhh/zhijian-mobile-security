@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "taskId": "S3-B",
+  "assets": [
+    {
+      "assetId": "VID-001",
+      "mediaId": "face-meeting.media.meeting",
+      "kind": "Video",
+      "path": "UnityProject/Assets/_Project/Media/FaceMeeting/meeting.mp4",
+      "sha256": "4b9b22176b7aa8489dc16fb37d4ecc7ca9c0d7d13f57381aa5e43e78197e780d",
+      "durationSeconds": 16.0,
+      "width": 720,
+      "height": 1280,
+      "transcriptPath": "docs/media/S3-B/meeting-transcript.txt",
+      "subtitlesPath": "UnityProject/Assets/_Project/Media/FaceMeeting/meeting.srt",
+      "provenancePath": "docs/media/S3-B/provenance.md",
+      "licenseStatus": "pending",
+      "notes": "本轮原创矢量人物和场景；独立调用本机 Microsoft Huihui Desktop 普通合成音，无真人素材或声音克隆。Noto Sans SC 按工程既有 OFL 1.1 使用。未取得内置声音的独立分发许可凭据，许可核对待主窗口完成；不代表 approvedForUse 或 trainingEnabled 已开放。",
+      "fps": 25,
+      "frameCount": 400,
+      "videoCodec": "H.264 Main level 3.1",
+      "pixelFormat": "yuv420p",
+      "audioCodec": "AAC-LC",
+      "audioSampleRate": 48000,
+      "audioChannels": 1,
+      "subtitlesSha256": "bd175693e7bc771876a9586315b8649222f5c945303ae6dc0b782e03b6ea473d",
+      "subtitlesEncoding": "UTF-8",
+      "subtitleCueCount": 4,
+      "subtitleMaxEndSeconds": 15.229,
+      "captionsBurnedIn": true,
+      "sourceVoicePath": "docs/media/S3-B/meeting-voice.wav",
+      "sourceVoiceSha256": "f7f0e7e8ec1c2faac3cea66b07e53fcdf7f0c137b6c2b18204cb3dd0820f08e0",
+      "sourceVectorPath": "docs/media/S3-B/character.svg",
+      "generatorPath": "docs/media/S3-B/render_meeting.py",
+      "verificationPath": "docs/media/S3-B/verification/verification.json"
+    }
+  ],
+  "anomalies": [
+    {
+      "type": "lip-audio-offset",
+      "rangeSeconds": [
+        0,
+        4
+      ],
+      "implementation": "嘴形音量驱动比实际音轨延后0.46秒；其余段落不加此延时。",
+      "evidenceId": "face-meeting.evidence.sync"
+    },
+    {
+      "type": "unstable-face-edge",
+      "rangeSeconds": [
+        4.15,
+        7.9
+      ],
+      "implementation": "左右转头时右侧轮廓局部条带随时间变形、偏移，幅度约数个至十余个像素；不是仅写检测文案。",
+      "evidenceId": "face-meeting.evidence.edge"
+    },
+    {
+      "type": "opposing-lighting",
+      "rangeSeconds": [
+        8,
+        12
+      ],
+      "implementation": "脸部左明右暗，露出的颈部左暗右明；对比方向在成片中可见。",
+      "evidenceId": "face-meeting.evidence.light"
+    }
+  ],
+  "verification": {
+    "technicalMediaCheck": "passed",
+    "keyframesVisuallyReviewed": true,
+    "unityPlayback": "not-run",
+    "androidPlayback": "not-run",
+    "wholeVideoHumanListeningReview": "not-performed"
+  },
+  "sharedParentMetaBaseline": {
+    "UnityProject/Assets/_Project/Media/FaceMeeting.meta": "06402ee463bf3a7df7e0f7e77218aa60257c5d9dafbac03c6688c180a9e98c38",
+    "UnityProject/Assets/_Project/Media.meta": "2ae1bf47db36f9f3d6523cc3a7f453b69f49c479e9417028ec5cc72324f71e1d"
+  }
+}

@@ -1,0 +1,310 @@
+{
+  "taskId": "S3-A",
+  "inspectionDate": "2026-10-19",
+  "scope": "media-file-inspection-only",
+  "audio": {
+    "container": "RIFF/WAVE",
+    "formatTag": 1,
+    "codec": "PCM_S16LE",
+    "channels": 1,
+    "sampleRate": 44100,
+    "bitsPerSample": 16,
+    "sampleFrames": 617400,
+    "durationSeconds": 14.0,
+    "fileBytes": 1234844,
+    "sha256": "8ffd83d3a9083482f9f93446e6bbaf9a517966c60cf3ded31cd636548d9478e1",
+    "peakDbfs": -2.078,
+    "rmsDbfs": -21.132,
+    "clippedSamples": 0,
+    "pauseNoiseMeasurements": [
+      {
+        "name": "before-noise-change",
+        "startSeconds": 3.821224,
+        "endSeconds": 4.096224,
+        "rmsDbfs": -49.044,
+        "spectralCentroidHz": 2878.76
+      },
+      {
+        "name": "after-noise-change",
+        "startSeconds": 4.146224,
+        "endSeconds": 4.421224,
+        "rmsDbfs": -42.965,
+        "spectralCentroidHz": 1123.54
+      }
+    ],
+    "waveDecoded": true,
+    "listeningReview": "not-performed",
+    "pronunciationReview": "synthesis-input-checked; human-listening-not-performed"
+  },
+  "payee": {
+    "format": "PNG",
+    "width": 1080,
+    "height": 1080,
+    "mode": "RGBA",
+    "fileBytes": 73771,
+    "sha256": "912cf13d319dad8c35a9851bedfed8d54b7329c3ad1e91af16cd0047d77b3c6e",
+    "fullyDecoded": true,
+    "uniqueColorsIn128Thumbnail": 852,
+    "visualReview": "reviewed-in-chat; no clipping or unreadable required text"
+  },
+  "samplePhoto": {
+    "format": "PNG",
+    "width": 960,
+    "height": 1280,
+    "mode": "RGBA",
+    "fileBytes": 88291,
+    "sha256": "9e1e5138a560018e4a56e53deec00d7c3254c9517d58f92d4f4f79ada82907b3",
+    "fullyDecoded": true,
+    "uniqueColorsIn128Thumbnail": 1469,
+    "visualReview": "reviewed-in-chat; no clipping or unreadable required text"
+  },
+  "audioProduction": {
+    "voiceSource": {
+      "voice": "Microsoft Huihui Desktop - Chinese (Simplified)",
+      "tokenId": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\Voices\\Tokens\\TTS_MS_ZH-CN_HUIHUI_11.0",
+      "language": "804",
+      "gender": "Female",
+      "api": "Windows SAPI.SpVoice",
+      "sapiFileVersion": "5.3.30018.00 (WinBuild.160101.0800)",
+      "os": "Microsoft Windows NT 10.0.26200.0",
+      "powershell": "7.6.5",
+      "sapiFormatType": 34,
+      "sampleRate": 44100,
+      "channels": 1,
+      "bitsPerSample": 16,
+      "segments": [
+        {
+          "rate": -2,
+          "file": "01-intro.wav",
+          "text": "是我，林澈。"
+        },
+        {
+          "rate": -2,
+          "file": "02-urgent.wav",
+          "text": "我这边急用"
+        },
+        {
+          "rate": -2,
+          "file": "03-amount.wav",
+          "text": "八百块。"
+        },
+        {
+          "rate": -1,
+          "file": "04-payee.wav",
+          "text": "收款码发你了，你先转过去。"
+        },
+        {
+          "rate": -1,
+          "file": "05-callback.wav",
+          "text": "现在不方便接电话，晚点跟你说。"
+        }
+      ]
+    },
+    "pythonVersion": "3.12.14",
+    "numpyVersion": "2.3.5",
+    "sampleRate": 44100,
+    "channels": 1,
+    "bitsPerSample": 16,
+    "sampleFrames": 617400,
+    "durationSeconds": 14.0,
+    "anomalousPause": {
+      "startSeconds": 3.761224,
+      "endSeconds": 4.481224,
+      "durationSeconds": 0.72
+    },
+    "cues": [
+      {
+        "text": "是我，林澈。",
+        "startSeconds": 0.1,
+        "endSeconds": 2.099002,
+        "sourceDurationSeconds": 1.848798,
+        "timeStretchFactor": 1.081244,
+        "sapiRate": -2
+      },
+      {
+        "text": "我这边急用",
+        "startSeconds": 2.259002,
+        "endSeconds": 3.761224,
+        "sourceDurationSeconds": 1.389342,
+        "timeStretchFactor": 1.081247,
+        "sapiRate": -2
+      },
+      {
+        "text": "八百块。",
+        "startSeconds": 4.481224,
+        "endSeconds": 5.461746,
+        "sourceDurationSeconds": 0.906848,
+        "timeStretchFactor": 1.081241,
+        "sapiRate": -2
+      },
+      {
+        "text": "收款码发你了，你先转过去。",
+        "startSeconds": 5.641746,
+        "endSeconds": 9.343356,
+        "sourceDurationSeconds": 3.423469,
+        "timeStretchFactor": 1.081245,
+        "sapiRate": -1
+      },
+      {
+        "text": "现在不方便接电话，晚点跟你说。",
+        "startSeconds": 9.463356,
+        "endSeconds": 13.8,
+        "sourceDurationSeconds": 4.010771,
+        "timeStretchFactor": 1.081249,
+        "sapiRate": -1
+      }
+    ],
+    "noiseSeed": 20261019,
+    "noiseRmsBeforeDbfs": -49,
+    "noiseRmsAfterDbfs": -43,
+    "noiseChangeSeconds": 4.121224,
+    "peakDbfs": -2.078,
+    "rmsDbfs": -21.132,
+    "clippedSamples": 0,
+    "pitchPreservingTimeFit": "NumPy STFT phase vocoder, Hann 2048 / hop 256"
+  },
+  "imageProduction": {
+    "sharpVersions": {
+      "aom": "3.15.1",
+      "archive": "3.8.9",
+      "cairo": "1.18.6",
+      "cgif": "0.5.4",
+      "exif": "0.6.26",
+      "expat": "2.8.5",
+      "ffi": "3.8.0",
+      "fontconfig": "2.18.3",
+      "freetype": "2.14.3",
+      "fribidi": "1.0.17",
+      "glib": "2.90.0",
+      "harfbuzz": "14.5.0",
+      "heif": "1.23.5",
+      "highway": "1.4.0",
+      "imagequant": "2.4.1",
+      "lcms": "2.19.1",
+      "mozjpeg": "0826579",
+      "pango": "1.58.2",
+      "pixman": "0.46.4",
+      "png": "1.6.58",
+      "proxy-libintl": "0.5",
+      "rsvg": "2.63.2",
+      "tiff": "4.7.2",
+      "uhdr": "2.0.2",
+      "vips": "8.18.7",
+      "webp": "1.6.0",
+      "xml2": "2.15.4",
+      "zlib-ng": "2.3.3",
+      "sharp": "0.35.5"
+    },
+    "fontPath": "UnityProject/Assets/_Project/Art/Fonts/NotoSansSC-Regular.otf",
+    "assets": [
+      {
+        "path": "UnityProject/Assets/_Project/Media/VoiceLoan/payee.png",
+        "source": "docs/media/S3-A/sources/payee.svg",
+        "width": 1080,
+        "height": 1080,
+        "textBoxes": [
+          {
+            "text": "收款信息",
+            "x": 168,
+            "y": 82,
+            "width": 226,
+            "height": 56
+          },
+          {
+            "text": "教学示意",
+            "x": 839,
+            "y": 94,
+            "width": 121,
+            "height": 31
+          },
+          {
+            "text": "收款人",
+            "x": 80,
+            "y": 262,
+            "width": 111,
+            "height": 37
+          },
+          {
+            "text": "杜禾",
+            "x": 76,
+            "y": 330,
+            "width": 226,
+            "height": 108
+          },
+          {
+            "text": "请求金额",
+            "x": 80,
+            "y": 506,
+            "width": 150,
+            "height": 38
+          },
+          {
+            "text": "800 元",
+            "x": 76,
+            "y": 576,
+            "width": 309,
+            "height": 93
+          },
+          {
+            "text": "教学收款码 · 不可扫描",
+            "x": 220,
+            "y": 838,
+            "width": 447,
+            "height": 42
+          },
+          {
+            "text": "虚构收款信息 · 不涉及真实账户或支付",
+            "x": 80,
+            "y": 1006,
+            "width": 556,
+            "height": 32
+          }
+        ]
+      },
+      {
+        "path": "UnityProject/Assets/_Project/Media/PhotoPermission/sample-photo.png",
+        "source": "docs/media/S3-A/sources/sample-photo.svg",
+        "width": 960,
+        "height": 1280,
+        "textBoxes": [
+          {
+            "text": "示例照片",
+            "x": 48,
+            "y": 60,
+            "width": 191,
+            "height": 47
+          },
+          {
+            "text": "原创虚构人物",
+            "x": 602,
+            "y": 76,
+            "width": 190,
+            "height": 32
+          },
+          {
+            "text": "教学示意 · 非真人证件照",
+            "x": 197,
+            "y": 1106,
+            "width": 434,
+            "height": 38
+          },
+          {
+            "text": "仅演示指定照片范围，不含真实身份资料",
+            "x": 137,
+            "y": 1213,
+            "width": 575,
+            "height": 33
+          }
+        ]
+      }
+    ]
+  },
+  "pillowVersion": "12.3.0",
+  "notVerified": [
+    "human listening and pronunciation",
+    "Unity import/playback",
+    "Android device playback",
+    "licensing of Microsoft voice output redistribution",
+    "binding and approvedForUse/trainingEnabled"
+  ]
+}

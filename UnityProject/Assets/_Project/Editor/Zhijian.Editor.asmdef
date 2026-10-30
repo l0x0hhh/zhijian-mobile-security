@@ -1,0 +1,20 @@
+{
+  "name": "Zhijian.Editor",
+  "rootNamespace": "Zhijian.Editor",
+  "references": [
+    "Zhijian.Domain",
+    "Zhijian.Application",
+    "Zhijian.Infrastructure"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

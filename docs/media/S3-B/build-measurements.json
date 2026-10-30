@@ -1,0 +1,82 @@
+{
+  "width": 720,
+  "height": 1280,
+  "fps": 25,
+  "durationSeconds": 16.0,
+  "sampleRate": 48000,
+  "cues": [
+    {
+      "index": 1,
+      "text": "今天临时加个会，用轻会助手参加。",
+      "subtitleLines": [
+        "今天临时加个会，",
+        "用轻会助手参加。"
+      ],
+      "rawDurationSeconds": 4.149875,
+      "rawActiveStart": 0.122,
+      "rawActiveEnd": 3.4753333333333334,
+      "placedClipStart": 0.32,
+      "placedClipEnd": 3.723333333333333,
+      "speechStart": 0.34,
+      "speechEnd": 3.6933333333333334,
+      "rawSha256": "d11f7d9c123d5f20bdc68a7934c6324b08620712406e4c26a1e0a379da4ae643",
+      "subtitleStart": 0.28,
+      "subtitleEnd": 3.814
+    },
+    {
+      "index": 2,
+      "text": "下载链接已经发到聊天里了。",
+      "subtitleLines": [
+        "下载链接已经发到聊天里了。"
+      ],
+      "rawDurationSeconds": 3.116875,
+      "rawActiveStart": 0.10875,
+      "rawActiveEnd": 2.410041666666667,
+      "placedClipStart": 4.44,
+      "placedClipEnd": 6.791291666666667,
+      "speechStart": 4.46,
+      "speechEnd": 6.761291666666667,
+      "rawSha256": "0cc1f8bd1d195993566470ee706aaa92b17537e6842a5cba5678cbd44f788d00",
+      "subtitleStart": 4.4,
+      "subtitleEnd": 6.882
+    },
+    {
+      "index": 3,
+      "text": "装好后打开短信和通讯录。",
+      "subtitleLines": [
+        "装好后打开短信和通讯录。"
+      ],
+      "rawDurationSeconds": 3.116875,
+      "rawActiveStart": 0.1214375,
+      "rawActiveEnd": 2.3920833333333333,
+      "placedClipStart": 8.36,
+      "placedClipEnd": 10.680645833333333,
+      "speechStart": 8.38,
+      "speechEnd": 10.650645833333334,
+      "rawSha256": "6d3b5bf7e5c5a57d554c2282617b7a63f84aead3bbf1ab63ad8d3c22dac72dc8",
+      "subtitleStart": 8.32,
+      "subtitleEnd": 10.771
+    },
+    {
+      "index": 4,
+      "text": "我们马上开始，先把工具准备好。",
+      "subtitleLines": [
+        "我们马上开始，",
+        "先把工具准备好。"
+      ],
+      "rawDurationSeconds": 3.88525,
+      "rawActiveStart": 0.13070833333333334,
+      "rawActiveEnd": 3.1791875,
+      "placedClipStart": 12.04,
+      "placedClipEnd": 15.138479166666666,
+      "speechStart": 12.06,
+      "speechEnd": 15.108479166666667,
+      "rawSha256": "a193e14a81ca586a7183cbf62a6ad511d1b37bf92a132aebf82164dadea5b10b",
+      "subtitleStart": 12.0,
+      "subtitleEnd": 15.229
+    }
+  ],
+  "fontSha256": "faa6c9df652116dde789d351359f3d7e5d2285a2b2a1f04a2d7244df706d5ea9",
+  "videoSha256": "4b9b22176b7aa8489dc16fb37d4ecc7ca9c0d7d13f57381aa5e43e78197e780d",
+  "voiceSha256": "f7f0e7e8ec1c2faac3cea66b07e53fcdf7f0c137b6c2b18204cb3dd0820f08e0"
+}

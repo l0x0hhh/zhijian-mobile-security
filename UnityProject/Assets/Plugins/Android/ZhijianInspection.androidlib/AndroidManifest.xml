@@ -1,0 +1,10 @@
+<!-- 说明：更新检查需要网络；文件检查 Activity 仅供本应用使用，不申请敏感数据权限。 -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.zhijian.inspection">
+  <uses-permission android:name="android.permission.INTERNET" />
+  <application>
+    <activity android:name="com.zhijian.inspection.ApkInspectionActivity"
+      android:exported="false" android:excludeFromRecents="true"
+      android:configChanges="keyboardHidden|orientation|screenSize"
+      android:theme="@android:style/Theme.Material.Light.NoActionBar" />
+  </application>
+</manifest>

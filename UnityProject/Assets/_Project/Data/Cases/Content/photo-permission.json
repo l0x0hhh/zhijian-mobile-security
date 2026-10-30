@@ -1,0 +1,585 @@
+{
+  "schemaVersion": 1,
+  "id": "photo-permission",
+  "title": "证件照权限",
+  "summary": "做一张证件照，应用却索取七项访问。",
+  "kind": "PhotoPermission",
+  "policyId": "photo-permission",
+  "contentVersion": 1,
+  "scoringRuleVersion": 1,
+  "defaultFeatureIntentId": null,
+  "requiredSteps": [
+    "BackgroundViewed",
+    "AnyEvidenceCollected",
+    "PermissionsReviewed",
+    "VerificationSelected",
+    "RiskSelected",
+    "DispositionSelected",
+    "FeatureIntentSelected"
+  ],
+  "featureIntents": [
+    {
+      "id": "take-photo",
+      "title": "拍摄"
+    },
+    {
+      "id": "selected-photo",
+      "title": "指定照片"
+    },
+    {
+      "id": "abandon",
+      "title": "放弃功能"
+    }
+  ],
+  "supportedOutcomes": [
+    "Safe",
+    "PrivacyFailure",
+    "JudgmentFailure"
+  ],
+  "messages": [],
+  "media": [],
+  "sources": [
+    {
+      "id": "photo-permission.source.details",
+      "kind": "AppDetails",
+      "title": "应用详情",
+      "body": "简像证件照。功能：拍摄或选一张照片，调整背景并裁切。开发者：个人开发者。来源：本地模拟文件页。状态：待启用（教学模拟）。",
+      "requiredForBackground": true,
+      "mediaId": null
+    },
+    {
+      "id": "photo-permission.source.developer",
+      "kind": "AppDetails",
+      "title": "开发者资料",
+      "body": "未提供可核实的主体名称和联系方式。",
+      "requiredForBackground": false,
+      "mediaId": null
+    },
+    {
+      "id": "photo-permission.source.distribution",
+      "kind": "Background",
+      "title": "分发来源",
+      "body": "案例本地模拟文件页，发布者未核实，不下载、不联网。",
+      "requiredForBackground": false,
+      "mediaId": null
+    },
+    {
+      "id": "photo-permission.source.policy",
+      "kind": "PrivacyPolicy",
+      "title": "隐私政策",
+      "body": "虚构政策，仅供练习。\n\n照片处理需要一张图片。你可以拍摄，也可以只选择一张现有照片。\n\n为改进服务，我们可以读取通讯录、短信、位置和相册中的全部照片，并用于关联分析。\n\n即使退出编辑，也须允许持续后台运行；拒绝后将无法制作证件照。",
+      "requiredForBackground": true,
+      "mediaId": null
+    },
+    {
+      "id": "photo-permission.source.permissions",
+      "kind": "PermissionDeclaration",
+      "title": "访问声明",
+      "body": "先选择用途，再判断每项访问。七项初始均待判断，阅读不等于同意。",
+      "requiredForBackground": false,
+      "mediaId": null
+    },
+    {
+      "id": "photo-permission.source.reference",
+      "kind": "Background",
+      "title": "独立来源目录",
+      "body": "案例对照资料：没有找到与发布者相符的主体和可信发布记录，来源仍无法核实；不是现实应用商店查询。",
+      "requiredForBackground": false,
+      "mediaId": null
+    },
+    {
+      "id": "photo-permission.policy.function",
+      "kind": "PrivacyPolicy",
+      "title": "照片功能",
+      "body": "照片处理需要一张图片。你可以拍摄，也可以只选择一张现有照片。",
+      "requiredForBackground": false,
+      "mediaId": null
+    },
+    {
+      "id": "photo-permission.policy.collection",
+      "kind": "PrivacyPolicy",
+      "title": "收集与关联分析",
+      "body": "为改进服务，我们可以读取通讯录、短信、位置和相册中的全部照片，并用于关联分析。",
+      "requiredForBackground": false,
+      "mediaId": null
+    },
+    {
+      "id": "photo-permission.policy.background",
+      "kind": "PrivacyPolicy",
+      "title": "持续后台要求",
+      "body": "即使退出编辑，也须允许持续后台运行；拒绝后将无法制作证件照。",
+      "requiredForBackground": false,
+      "mediaId": null
+    },
+    {
+      "id": "photo-permission.source.permission.contacts",
+      "kind": "PermissionDeclaration",
+      "title": "通讯录用途",
+      "body": "应用声称读取通讯录用于推荐分享对象。",
+      "requiredForBackground": false,
+      "mediaId": null
+    },
+    {
+      "id": "photo-permission.source.permission.sms",
+      "kind": "PermissionDeclaration",
+      "title": "短信用途",
+      "body": "应用声称读取短信用于自动验证账号。",
+      "requiredForBackground": false,
+      "mediaId": null
+    },
+    {
+      "id": "photo-permission.source.permission.background",
+      "kind": "PermissionDeclaration",
+      "title": "后台运行用途",
+      "body": "应用声称后台运行用于持续优化照片；拒绝持续后台就无法制作照片。",
+      "requiredForBackground": false,
+      "mediaId": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "photo-permission.evidence.mismatch",
+      "sourceId": "photo-permission.source.permissions",
+      "title": "照片功能不需要短信和通讯录",
+      "explanation": "对照照片功能与短信、通讯录声明。",
+      "isKey": true,
+      "scoreWeight": 10,
+      "alternativeSourceIds": [],
+      "requiredSourceIds": [
+        "photo-permission.source.details",
+        "photo-permission.source.permission.contacts",
+        "photo-permission.source.permission.sms"
+      ]
+    },
+    {
+      "id": "photo-permission.evidence.unknown-developer",
+      "sourceId": "photo-permission.source.developer",
+      "title": "开发者身份无法核实",
+      "explanation": "缺少可核实的主体与联系方式。",
+      "isKey": true,
+      "scoreWeight": 10,
+      "alternativeSourceIds": [],
+      "requiredSourceIds": []
+    },
+    {
+      "id": "photo-permission.evidence.excess-policy",
+      "sourceId": "photo-permission.policy.collection",
+      "title": "政策允许扩大收集范围",
+      "explanation": "政策列出通讯录、短信、位置、全部照片及关联分析。",
+      "isKey": true,
+      "scoreWeight": 10,
+      "alternativeSourceIds": [],
+      "requiredSourceIds": []
+    },
+    {
+      "id": "photo-permission.evidence.background",
+      "sourceId": "photo-permission.policy.background",
+      "title": "拒绝后台就不让制作照片",
+      "explanation": "后台要求与制作一张照片的功能不匹配。",
+      "isKey": true,
+      "scoreWeight": 10,
+      "alternativeSourceIds": [
+        "photo-permission.source.permission.background"
+      ],
+      "requiredSourceIds": [
+        "photo-permission.source.details"
+      ]
+    }
+  ],
+  "permissions": [
+    {
+      "id": "photo-permission.permission.camera",
+      "purpose": "拍摄证件照",
+      "category": "Camera",
+      "scoreWeight": 4,
+      "scopes": [
+        "Full"
+      ],
+      "intentRules": [
+        {
+          "intentId": "take-photo",
+          "allowedScopes": [
+            "Full"
+          ],
+          "acceptsDenied": false,
+          "riskWeights": [
+            {
+              "scope": "Full",
+              "weight": 0
+            }
+          ]
+        },
+        {
+          "intentId": "selected-photo",
+          "allowedScopes": [],
+          "acceptsDenied": true,
+          "riskWeights": [
+            {
+              "scope": "Full",
+              "weight": 10
+            }
+          ]
+        },
+        {
+          "intentId": "abandon",
+          "allowedScopes": [],
+          "acceptsDenied": true,
+          "riskWeights": [
+            {
+              "scope": "Full",
+              "weight": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "photo-permission.permission.photos",
+      "purpose": "选择或管理照片",
+      "category": "Photos",
+      "scoreWeight": 4,
+      "scopes": [
+        "SelectedPhotos",
+        "AllPhotos"
+      ],
+      "intentRules": [
+        {
+          "intentId": "take-photo",
+          "allowedScopes": [],
+          "acceptsDenied": true,
+          "riskWeights": [
+            {
+              "scope": "SelectedPhotos",
+              "weight": 10
+            },
+            {
+              "scope": "AllPhotos",
+              "weight": 20
+            }
+          ]
+        },
+        {
+          "intentId": "selected-photo",
+          "allowedScopes": [
+            "SelectedPhotos"
+          ],
+          "acceptsDenied": false,
+          "riskWeights": [
+            {
+              "scope": "SelectedPhotos",
+              "weight": 0
+            },
+            {
+              "scope": "AllPhotos",
+              "weight": 20
+            }
+          ]
+        },
+        {
+          "intentId": "abandon",
+          "allowedScopes": [],
+          "acceptsDenied": true,
+          "riskWeights": [
+            {
+              "scope": "SelectedPhotos",
+              "weight": 10
+            },
+            {
+              "scope": "AllPhotos",
+              "weight": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "photo-permission.permission.microphone",
+      "purpose": "语音指导",
+      "category": "Microphone",
+      "scoreWeight": 4,
+      "scopes": [
+        "Full"
+      ],
+      "intentRules": [
+        {
+          "intentId": "take-photo",
+          "allowedScopes": [],
+          "acceptsDenied": true,
+          "riskWeights": [
+            {
+              "scope": "Full",
+              "weight": 10
+            }
+          ]
+        },
+        {
+          "intentId": "selected-photo",
+          "allowedScopes": [],
+          "acceptsDenied": true,
+          "riskWeights": [
+            {
+              "scope": "Full",
+              "weight": 10
+            }
+          ]
+        },
+        {
+          "intentId": "abandon",
+          "allowedScopes": [],
+          "acceptsDenied": true,
+          "riskWeights": [
+            {
+              "scope": "Full",
+              "weight": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "photo-permission.permission.contacts",
+      "purpose": "推荐分享对象",
+      "category": "Contacts",
+      "scoreWeight": 5,
+      "scopes": [
+        "Full"
+      ],
+      "intentRules": [
+        {
+          "intentId": "take-photo",
+          "allowedScopes": [],
+          "acceptsDenied": true,
+          "riskWeights": [
+            {
+              "scope": "Full",
+              "weight": 20
+            }
+          ]
+        },
+        {
+          "intentId": "selected-photo",
+          "allowedScopes": [],
+          "acceptsDenied": true,
+          "riskWeights": [
+            {
+              "scope": "Full",
+              "weight": 20
+            }
+          ]
+        },
+        {
+          "intentId": "abandon",
+          "allowedScopes": [],
+          "acceptsDenied": true,
+          "riskWeights": [
+            {
+              "scope": "Full",
+              "weight": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "photo-permission.permission.sms",
+      "purpose": "自动验证账号",
+      "category": "Sms",
+      "scoreWeight": 5,
+      "scopes": [
+        "Full"
+      ],
+      "intentRules": [
+        {
+          "intentId": "take-photo",
+          "allowedScopes": [],
+          "acceptsDenied": true,
+          "riskWeights": [
+            {
+              "scope": "Full",
+              "weight": 20
+            }
+          ]
+        },
+        {
+          "intentId": "selected-photo",
+          "allowedScopes": [],
+          "acceptsDenied": true,
+          "riskWeights": [
+            {
+              "scope": "Full",
+              "weight": 20
+            }
+          ]
+        },
+        {
+          "intentId": "abandon",
+          "allowedScopes": [],
+          "acceptsDenied": true,
+          "riskWeights": [
+            {
+              "scope": "Full",
+              "weight": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "photo-permission.permission.location",
+      "purpose": "匹配本地规格",
+      "category": "Location",
+      "scoreWeight": 4,
+      "scopes": [
+        "Full"
+      ],
+      "intentRules": [
+        {
+          "intentId": "take-photo",
+          "allowedScopes": [],
+          "acceptsDenied": true,
+          "riskWeights": [
+            {
+              "scope": "Full",
+              "weight": 15
+            }
+          ]
+        },
+        {
+          "intentId": "selected-photo",
+          "allowedScopes": [],
+          "acceptsDenied": true,
+          "riskWeights": [
+            {
+              "scope": "Full",
+              "weight": 15
+            }
+          ]
+        },
+        {
+          "intentId": "abandon",
+          "allowedScopes": [],
+          "acceptsDenied": true,
+          "riskWeights": [
+            {
+              "scope": "Full",
+              "weight": 15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "photo-permission.permission.background",
+      "purpose": "持续优化照片",
+      "category": "BackgroundActivity",
+      "scoreWeight": 4,
+      "scopes": [
+        "Full"
+      ],
+      "intentRules": [
+        {
+          "intentId": "take-photo",
+          "allowedScopes": [],
+          "acceptsDenied": true,
+          "riskWeights": [
+            {
+              "scope": "Full",
+              "weight": 15
+            }
+          ]
+        },
+        {
+          "intentId": "selected-photo",
+          "allowedScopes": [],
+          "acceptsDenied": true,
+          "riskWeights": [
+            {
+              "scope": "Full",
+              "weight": 15
+            }
+          ]
+        },
+        {
+          "intentId": "abandon",
+          "allowedScopes": [],
+          "acceptsDenied": true,
+          "riskWeights": [
+            {
+              "scope": "Full",
+              "weight": 15
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "verificationOptions": [
+    {
+      "id": "photo-permission.verify.independent",
+      "text": "核对开发者与独立分发来源",
+      "reliable": true,
+      "feedback": "可靠方法；本地对照资料反馈“没有找到与发布者相符的主体和可信发布记录，来源仍无法核实。”；表示方法可靠，不表示应用可靠"
+    },
+    {
+      "id": "photo-permission.verify.self-description",
+      "text": "相信应用里的“安全可靠”说明",
+      "reliable": false,
+      "feedback": "不可靠；“这是应用自己的说法，缺少独立依据。”"
+    },
+    {
+      "id": "photo-permission.verify.download-count",
+      "text": "看下载量就判断可信",
+      "reliable": false,
+      "feedback": "不可靠；“下载量不能证明访问必要或来源可信。”"
+    },
+    {
+      "id": "photo-permission.verify.privacy-title",
+      "text": "有隐私政策就相信",
+      "reliable": false,
+      "feedback": "不可靠；“需要看条款内容，标题不能证明收集合理。”"
+    }
+  ],
+  "riskOptions": [
+    {
+      "id": "photo-permission.class.excess-permission",
+      "text": "过度授权与隐私风险",
+      "isCorrect": true
+    },
+    {
+      "id": "photo-permission.class.normal",
+      "text": "正常照片处理所需",
+      "isCorrect": false
+    },
+    {
+      "id": "photo-permission.class.storage-only",
+      "text": "只是照片存储空间不足",
+      "isCorrect": false
+    }
+  ],
+  "dispositionOptions": [
+    {
+      "id": "photo-permission.disposition.reject",
+      "text": "按需审查后，拒绝使用并留证",
+      "kind": "RefuseUntrustedApp",
+      "isCorrect": true,
+      "isImmediateFailure": false,
+      "effect": "None"
+    },
+    {
+      "id": "photo-permission.disposition.keep-using",
+      "text": "保留当前授权，继续使用",
+      "kind": "ContinueUsingApp",
+      "isCorrect": false,
+      "isImmediateFailure": false,
+      "effect": "None"
+    },
+    {
+      "id": "photo-permission.disposition.trust-policy",
+      "text": "有政策就接受并继续",
+      "kind": "ContinueUsingApp",
+      "isCorrect": false,
+      "isImmediateFailure": false,
+      "effect": "None"
+    }
+  ]
+}

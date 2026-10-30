@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-19",
+  "scope": "UI rows and navigation lifetime foundations; no animation implementation",
+  "checks": [
+    "Modified C# first-line comments and lexical delimiters checked; this is not compilation.",
+    "Inspector field declarations unchanged; existing prefab and scene bindings retained.",
+    "Presentation and UnityUI namespace boundaries checked in modified text.",
+    "New script metas paired and unique against all current Assets GUIDs.",
+    "IPageHandle implementation and PageRouter constructor call sites checked by source inspection.",
+    "Domain, Application, Infrastructure, prefab, scene, data, asmdef and package hashes retained for deployment comparison."
+  ],
+  "csharpFiles": 15,
+  "compiled": false,
+  "unityStarted": false,
+  "projectTestsRun": false,
+  "runtimeAcceptance": "not-run",
+  "files": [
+    "UnityProject/Assets/_Project/Scripts/Presentation/Navigation/NavigationRequest.cs",
+    "UnityProject/Assets/_Project/Scripts/UnityUI/Navigation/IPageTransition.cs",
+    "UnityProject/Assets/_Project/Scripts/UnityUI/Navigation/IPageTransition.cs.meta",
+    "UnityProject/Assets/_Project/Scripts/UnityUI/Navigation/ImmediatePageTransition.cs",
+    "UnityProject/Assets/_Project/Scripts/UnityUI/Navigation/ImmediatePageTransition.cs.meta",
+    "UnityProject/Assets/_Project/Scripts/UnityUI/Navigation/PageHandle.cs",
+    "UnityProject/Assets/_Project/Scripts/UnityUI/Navigation/PageRouter.cs",
+    "UnityProject/Assets/_Project/Scripts/Presentation/Investigation/InvestigationPageData.cs",
+    "UnityProject/Assets/_Project/Scripts/Presentation/Investigation/PageComposerContext.cs",
+    "UnityProject/Assets/_Project/Scripts/Presentation/Investigation/SourcePageComposer.cs",
+    "UnityProject/Assets/_Project/Scripts/Presentation/Investigation/DecisionPageComposer.cs",
+    "UnityProject/Assets/_Project/Scripts/Presentation/Investigation/ResultsPageComposer.cs",
+    "UnityProject/Assets/_Project/Scripts/UnityUI/Views/Investigation/InvestigationRowView.cs",
+    "UnityProject/Assets/_Project/Scripts/UnityUI/Views/Investigation/ScrollDragState.cs",
+    "UnityProject/Assets/_Project/Scripts/UnityUI/Views/Investigation/ScrollDragState.cs.meta",
+    "UnityProject/Assets/_Project/Scripts/UnityUI/Views/Investigation/InvestigationPageView.cs",
+    "UnityProject/Assets/_Project/Scripts/UnityUI/Media/UnityMediaPlayer.cs",
+    "UnityProject/Assets/_Project/Scripts/Bootstrap/AppRoot.cs",
+    "docs/tasks/S4-动效基础修正.md",
+    "README.md"
+  ]
+}

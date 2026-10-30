@@ -1,0 +1,52 @@
+# 说明：仅在主分支推送或手动触发时由专用 Windows 团结运行器构建并上传测试 APK。
+name: Android APK
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: zhijian-android-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: [self-hosted, Windows, X64, tuanjie-1.6.9]
+    timeout-minutes: 90
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Build APK
+        shell: pwsh
+        env:
+          ZHIJIAN_EDITOR: E:\unity\2022.3.61t10\Editor\Tuanjie.exe
+        run: |
+          $ErrorActionPreference = 'Stop'
+          if (!(Test-Path -LiteralPath $env:ZHIJIAN_EDITOR)) { throw '团结编辑器未安装在指定位置。' }
+          $outputDirectory = Join-Path $env:RUNNER_TEMP ("zhijian-$env:GITHUB_RUN_ID-$env:GITHUB_RUN_ATTEMPT")
+          New-Item -ItemType Directory -Path $outputDirectory -Force | Out-Null
+          $env:ZHIJIAN_APK_PATH = Join-Path $outputDirectory 'zhijian-debug.apk'
+          $log = Join-Path $outputDirectory 'build.log'
+          "ZHIJIAN_OUTPUT=$outputDirectory" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+          $project = Join-Path $env:GITHUB_WORKSPACE 'UnityProject'
+          $arguments = @('-batchmode', '-quit', '-projectPath', ('"' + $project + '"'), '-buildTarget', 'Android', '-executeMethod', 'Zhijian.Editor.AndroidBuild.Build', '-logFile', ('"' + $log + '"'))
+          $process = Start-Process -FilePath $env:ZHIJIAN_EDITOR -ArgumentList $arguments -WindowStyle Hidden -Wait -PassThru
+          if ($process.ExitCode -ne 0 -or !(Test-Path -LiteralPath $env:ZHIJIAN_APK_PATH)) {
+            if (Test-Path -LiteralPath $log) { Get-Content -LiteralPath $log -Tail 100 | Where-Object { $_ -notmatch '(?i)licens|token|password|authorization' } }
+            throw "Android 构建失败，编辑器退出码 $($process.ExitCode)。"
+          }
+          $checksum = (Get-FileHash -LiteralPath $env:ZHIJIAN_APK_PATH -Algorithm SHA256).Hash
+          "$checksum  zhijian-debug.apk" | Set-Content -LiteralPath (Join-Path $outputDirectory 'SHA256.txt') -Encoding ascii
+      - name: Check APK inspection logic
+        shell: pwsh
+        run: ./tests/apk-inspection/run.ps1
+      - name: Upload APK
+        if: success()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: zhijian-android-${{ github.sha }}
+          path: |
+            ${{ env.ZHIJIAN_OUTPUT }}/zhijian-debug.apk
+            ${{ env.ZHIJIAN_OUTPUT }}/SHA256.txt
+          if-no-files-found: error
+          retention-days: 14

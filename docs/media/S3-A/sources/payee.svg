@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 说明：原创教学矢量图；文字使用项目已有的 Noto Sans SC，许可见制作记录。 -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+<rect width="1080" height="1080" fill="#F6F6F2"/>
+<path d="M80 210H1000M80 748H1000" stroke="#D6DDD4" stroke-width="2"/>
+<rect x="805" y="76" width="195" height="68" rx="18" fill="#E7EFE8"/>
+<circle cx="112" cy="115" r="30" fill="none" stroke="#294D42" stroke-width="4"/>
+<path d="M99 114l10 10 18-22" fill="none" stroke="#294D42" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="80" y="800" width="920" height="140" rx="20" fill="#ECEFE9"/>
+<path d="M116 841h66v62h-66zM127 852l44 40M171 852l-44 40" fill="none" stroke="#626D64" stroke-width="4" stroke-linecap="round"/>
+<path d="M80 978H1000" stroke="#D6DDD4" stroke-width="2"/>
+<text x="168" y="133.62" font-family="Noto Sans SC" font-size="58" fill="#202923">收款信息</text>
+<text x="839" y="121.59" font-family="Noto Sans SC" font-size="31" fill="#294D42">教学示意</text>
+<text x="80" y="295.82" font-family="Noto Sans SC" font-size="38" fill="#626D64">收款人</text>
+<text x="76" y="433.24" font-family="Noto Sans SC" font-size="116" fill="#202923">杜禾</text>
+<text x="80" y="539.82" font-family="Noto Sans SC" font-size="38" fill="#626D64">请求金额</text>
+<text x="76" y="673.9" font-family="Noto Sans SC" font-size="110" fill="#202923">800 元</text>
+<text x="220" y="876.27" font-family="Noto Sans SC" font-size="43" fill="#294D42">教学收款码 · 不可扫描</text>
+<text x="80" y="1034.48" font-family="Noto Sans SC" font-size="32" fill="#626D64">虚构收款信息 · 不涉及真实账户或支付</text>
+</svg>

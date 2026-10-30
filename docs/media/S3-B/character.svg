@@ -1,0 +1,57 @@
+<!-- 说明：原创许岚矢量角色与会议画面，几何由 render_meeting.py 生成，无真人或第三方角色参考。 -->
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1280" viewBox="0 0 720 1280">
+<rect x="0.00" y="0.00" width="720.00" height="80.00" rx="0" fill="#294D42"/>
+<text x="42.00" y="24.00" font-family="Noto Sans SC, sans-serif" font-size="30" fill="#FFFFFF" dominant-baseline="text-before-edge">虚构情境 · 教学模拟</text>
+<text x="42.00" y="118.00" font-family="Noto Sans SC, sans-serif" font-size="48" fill="#202923" dominant-baseline="text-before-edge">会议说明</text>
+<text x="44.00" y="185.00" font-family="Noto Sans SC, sans-serif" font-size="26" fill="#626D64" dominant-baseline="text-before-edge">青栎工作室</text>
+<rect x="42.00" y="242.00" width="636.00" height="765.00" rx="22" fill="#E7EFE8"/>
+<rect x="67.00" y="267.00" width="586.00" height="278.00" rx="10" fill="#F2F3EC"/>
+<polyline points="460.00,268.00 460.00,543.00" stroke="#D5DDD2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<polyline points="69.00,436.00 652.00,436.00" stroke="#D5DDD2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<polygon points="567.00,798.00 613.00,798.00 605.00,853.00 575.00,853.00" fill="#BC8C70"/>
+<polyline points="589.00,799.00 586.00,650.00" stroke="#6D866B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<ellipse cx="568.50" cy="696.00" rx="18.50" ry="28.00" fill="#859C78"/>
+<ellipse cx="607.00" cy="724.50" rx="20.00" ry="27.50" fill="#6D866B"/>
+<ellipse cx="572.00" cy="753.50" rx="17.00" ry="21.50" fill="#A1AF8B"/>
+<rect x="91.00" y="848.00" width="86.00" height="12.00" rx="3" fill="#AC7B65"/>
+<rect x="100.00" y="832.00" width="74.00" height="13.00" rx="3" fill="#BFC6B2"/>
+<polygon points="146.00,1007.00 159.00,841.00 189.00,780.00 276.00,728.00 321.00,716.00 399.00,716.00 444.00,730.00 532.00,780.00 561.00,841.00 575.00,1007.00" fill="#294D42"/>
+<polygon points="301.00,720.00 360.00,760.00 419.00,720.00 411.00,817.00 309.00,817.00" fill="#F3EDE0"/>
+<polygon points="324.00,613.00 396.00,613.00 405.00,727.00 360.00,760.00 316.00,727.00" fill="#C48E73"/>
+<polygon points="324.00,613.00 360.00,613.00 360.00,758.00 316.00,727.00" fill="#cb957b"/>
+<polygon points="360.00,613.00 396.00,613.00 405.00,727.00 360.00,758.00" fill="#d9a388"/>
+<polygon points="301.00,717.00 354.00,758.00 328.00,807.00 282.00,747.00" fill="#F2F0E7"/>
+<polygon points="419.00,717.00 366.00,758.00 392.00,807.00 438.00,747.00" fill="#F2F0E7"/>
+<polyline points="360.00,817.00 360.00,994.00" stroke="#42675A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<ellipse cx="360.50" cy="484.00" rx="148.50" ry="183.00" fill="#2C3834"/>
+<polygon points="215.00,435.00 236.00,686.00 257.00,712.00 264.00,563.00" fill="#2C3834"/>
+<polygon points="505.00,435.00 484.00,686.00 463.00,712.00 456.00,563.00" fill="#2C3834"/>
+<ellipse cx="253.00" cy="388.50" rx="20.00" ry="45.50" fill="#2C3834"/>
+<ellipse cx="250.50" cy="494.00" rx="20.50" ry="39.00" fill="#CF967B"/>
+<ellipse cx="469.50" cy="494.00" rx="18.50" ry="39.00" fill="#CF967B"/>
+<polygon points="251.00,395.00 272.00,357.00 330.00,336.00 414.00,344.00 463.00,390.00 473.00,486.00 462.00,565.00 430.00,621.00 387.00,651.00 338.00,651.00 287.00,620.00 256.00,565.00 245.00,487.00" fill="#DCA184"/>
+<polygon points="255.00,397.00 293.00,359.00 345.00,347.00 365.00,422.00 357.00,644.00 295.00,613.00 262.00,562.00 250.00,487.00" fill="#ebc0a1"/>
+<polygon points="365.00,360.00 418.00,352.00 459.00,399.00 469.00,488.00 460.00,558.00 428.00,617.00 377.00,646.00" fill="#dfa386"/>
+<polygon points="231.00,444.00 234.00,364.00 268.00,316.00 319.00,295.00 401.00,297.00 472.00,336.00 497.00,400.00 483.00,474.00 457.00,413.00 436.00,366.00 385.00,363.00 330.00,389.00 266.00,411.00" fill="#2C3834"/>
+<polyline points="269.00,352.00 312.00,326.00 369.00,321.00" stroke="#4A5750" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<ellipse cx="251.00" cy="532.00" rx="6.00" ry="7.00" fill="#B3755A"/>
+<ellipse cx="469.00" cy="532.00" rx="6.00" ry="7.00" fill="#B3755A"/>
+<polyline points="283.00,450.00 308.00,445.00 331.00,449.00" stroke="#55423C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<polyline points="383.00,449.00 407.00,445.00 430.00,450.00" stroke="#55423C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<ellipse cx="307.00" cy="477.00" rx="16.00" ry="9.00" fill="#F9F6EA"/>
+<ellipse cx="306.00" cy="476.00" rx="6.00" ry="10.00" fill="#35453C"/>
+<ellipse cx="306.00" cy="471.00" rx="2.00" ry="2.00" fill="#FFFFFF"/>
+<ellipse cx="408.00" cy="477.00" rx="16.00" ry="9.00" fill="#F9F6EA"/>
+<ellipse cx="407.00" cy="476.00" rx="6.00" ry="10.00" fill="#35453C"/>
+<ellipse cx="407.00" cy="471.00" rx="2.00" ry="2.00" fill="#FFFFFF"/>
+<polyline points="360.00,481.00 355.00,526.00 370.00,529.00" stroke="#B37862" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<ellipse cx="295.00" cy="532.50" rx="19.00" ry="8.50" fill="#E3A58C"/>
+<ellipse cx="420.50" cy="532.50" rx="18.50" ry="8.50" fill="#D9937C"/>
+<ellipse cx="360.00" cy="575.00" rx="28.00" ry="7.74" fill="#713F3D"/>
+<ellipse cx="360.00" cy="571.76" rx="24.00" ry="2.50" fill="#F9ECE0"/>
+<text x="44.00" y="1038.00" font-family="Noto Sans SC, sans-serif" font-size="28" fill="#202923" dominant-baseline="text-before-edge">许岚（虚构角色）</text>
+<polyline points="44.00,1093.00 676.00,1093.00" stroke="#D6DDD1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<text x="216.00" y="1124.00" font-family="Noto Sans SC, sans-serif" font-size="36" fill="#294D42" dominant-baseline="text-before-edge">今天临时加个会，</text>
+<text x="216.00" y="1176.00" font-family="Noto Sans SC, sans-serif" font-size="36" fill="#294D42" dominant-baseline="text-before-edge">用轻会助手参加。</text>
+<text x="44.00" y="1233.00" font-family="Noto Sans SC, sans-serif" font-size="21" fill="#626D64" dominant-baseline="text-before-edge">普通合成配音 · 无真人素材</text>
+</svg>

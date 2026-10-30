@@ -1,0 +1,500 @@
+{
+  "schemaVersion": 1,
+  "id": "voice-loan",
+  "title": "语音借款",
+  "summary": "好友换了账号，发来语音催你借钱。",
+  "kind": "VoiceLoan",
+  "policyId": "voice-loan",
+  "contentVersion": 1,
+  "scoringRuleVersion": 1,
+  "defaultFeatureIntentId": "voice-loan.intent.verify",
+  "requiredSteps": [
+    "BackgroundViewed",
+    "AnyEvidenceCollected",
+    "PermissionsReviewed",
+    "VerificationSelected",
+    "RiskSelected",
+    "DispositionSelected",
+    "MediaPlayed",
+    "MediaDetected"
+  ],
+  "featureIntents": [
+    {
+      "id": "voice-loan.intent.verify",
+      "title": "核对来源"
+    }
+  ],
+  "supportedOutcomes": [
+    "Safe",
+    "ScamFailure",
+    "JudgmentFailure"
+  ],
+  "messages": [
+    {
+      "id": "voice-loan.msg.01",
+      "sourceId": "voice-loan.source.account",
+      "kind": "Text",
+      "text": "我是林澈，原来的号登不上了。先加这个。",
+      "sender": "新账号",
+      "mediaId": null,
+      "dispositionId": null,
+      "evidenceIds": [
+        "voice-loan.evidence.new-account"
+      ]
+    },
+    {
+      "id": "voice-loan.msg.02",
+      "sourceId": "voice-loan.source.msg.02",
+      "kind": "Voice",
+      "text": "语音 14 秒；文字稿随播放器可查看",
+      "sender": "新账号",
+      "mediaId": "voice-loan.media.request",
+      "dispositionId": null,
+      "evidenceIds": [
+        "voice-loan.evidence.pause"
+      ]
+    },
+    {
+      "id": "voice-loan.msg.03",
+      "sourceId": "voice-loan.source.payee",
+      "kind": "Image",
+      "text": "先转 800 元到这个收款码。",
+      "sender": "新账号",
+      "mediaId": "voice-loan.media.payee",
+      "dispositionId": null,
+      "evidenceIds": [
+        "voice-loan.evidence.payee-mismatch"
+      ]
+    },
+    {
+      "id": "voice-loan.msg.04",
+      "sourceId": "voice-loan.source.refusal",
+      "kind": "Text",
+      "text": "别回拨原号码，我现在接不了。转完发截图。",
+      "sender": "新账号",
+      "mediaId": null,
+      "dispositionId": null,
+      "evidenceIds": [
+        "voice-loan.evidence.refuse-callback"
+      ]
+    },
+    {
+      "id": "voice-loan.msg.05",
+      "sourceId": "voice-loan.source.msg.05",
+      "kind": "Link",
+      "text": "转账前先打开验证助手。",
+      "sender": "新账号",
+      "mediaId": null,
+      "dispositionId": null,
+      "evidenceIds": []
+    },
+    {
+      "id": "voice-loan.msg.06",
+      "sourceId": "voice-loan.source.msg.06",
+      "kind": "Text",
+      "text": "我先确认一下。",
+      "sender": "我",
+      "mediaId": null,
+      "dispositionId": null,
+      "evidenceIds": []
+    }
+  ],
+  "sources": [
+    {
+      "id": "voice-loan.source.account",
+      "kind": "Message",
+      "title": "新账号",
+      "body": "林澈（新账号）：本次新添加，无历史聊天。原消息：我是林澈，原来的号登不上了。先加这个。",
+      "requiredForBackground": true,
+      "mediaId": null
+    },
+    {
+      "id": "voice-loan.source.msg.02",
+      "kind": "Message",
+      "title": "新账号",
+      "body": "语音 14 秒；文字稿随播放器可查看",
+      "requiredForBackground": true,
+      "mediaId": null
+    },
+    {
+      "id": "voice-loan.source.payee",
+      "kind": "Message",
+      "title": "新账号",
+      "body": "教学收款信息：杜禾，800 元。没有可扫描的真实二维码。",
+      "requiredForBackground": true,
+      "mediaId": null
+    },
+    {
+      "id": "voice-loan.source.refusal",
+      "kind": "Message",
+      "title": "新账号",
+      "body": "别回拨原号码，我现在接不了。转完发截图。",
+      "requiredForBackground": true,
+      "mediaId": null
+    },
+    {
+      "id": "voice-loan.source.msg.05",
+      "kind": "Message",
+      "title": "新账号",
+      "body": "转账前先打开验证助手。",
+      "requiredForBackground": true,
+      "mediaId": null
+    },
+    {
+      "id": "voice-loan.source.msg.06",
+      "kind": "Message",
+      "title": "我",
+      "body": "我先确认一下。",
+      "requiredForBackground": true,
+      "mediaId": null
+    },
+    {
+      "id": "voice-loan.source.audio",
+      "kind": "Media",
+      "title": "语音与文字稿",
+      "body": "是我，林澈。我这边急用八百块。收款码发你了，你先转过去。现在不方便接电话，晚点跟你说。",
+      "requiredForBackground": false,
+      "mediaId": "voice-loan.media.request"
+    },
+    {
+      "id": "voice-loan.source.detection",
+      "kind": "Detection",
+      "title": "语音分析",
+      "body": "教学模拟：以下为预设结果，不是真实鉴定。异常只能辅助判断，请通过原联系方式核实。",
+      "requiredForBackground": false,
+      "mediaId": "voice-loan.media.request"
+    },
+    {
+      "id": "voice-loan.source.helper",
+      "kind": "AppDetails",
+      "title": "转账验证助手",
+      "body": "新账号提供的本地模拟页面，声称转账前需要验证。展示地址 https://check-transfer.invalid/verify；不联网。",
+      "requiredForBackground": false,
+      "mediaId": null
+    },
+    {
+      "id": "voice-loan.source.original-contact",
+      "kind": "Verification",
+      "title": "原联系人",
+      "body": "案例原号码的联系人回复：我没有借钱，也没换账号。先别转，保留消息。",
+      "requiredForBackground": false,
+      "mediaId": null
+    }
+  ],
+  "media": [
+    {
+      "id": "voice-loan.media.request",
+      "kind": "Audio",
+      "assetLedgerId": "AUD-001",
+      "transcript": "是我，林澈。我这边急用八百块。收款码发你了，你先转过去。现在不方便接电话，晚点跟你说。",
+      "findings": [
+        {
+          "indicator": "Prosody",
+          "label": "语音韵律",
+          "explanation": "两段语气衔接生硬。"
+        },
+        {
+          "indicator": "PauseContinuity",
+          "label": "停顿衔接",
+          "explanation": "句中停顿不自然。"
+        },
+        {
+          "indicator": "BackgroundNoise",
+          "label": "背景噪声",
+          "explanation": "停顿前后底噪有变化。"
+        }
+      ]
+    },
+    {
+      "id": "voice-loan.media.payee",
+      "kind": "Image",
+      "assetLedgerId": "IMG-VOICE-PAYEE",
+      "transcript": "教学收款信息：杜禾，800 元。",
+      "findings": []
+    }
+  ],
+  "evidence": [
+    {
+      "id": "voice-loan.evidence.new-account",
+      "sourceId": "voice-loan.source.account",
+      "title": "新账号没有聊天记录",
+      "explanation": "账号资料显示本次新添加，没有历史聊天。",
+      "isKey": true,
+      "scoreWeight": 10,
+      "alternativeSourceIds": [],
+      "requiredSourceIds": []
+    },
+    {
+      "id": "voice-loan.evidence.payee-mismatch",
+      "sourceId": "voice-loan.source.payee",
+      "title": "收款人不是林澈",
+      "explanation": "对照自称林澈的账号与收款信息中的杜禾。",
+      "isKey": true,
+      "scoreWeight": 10,
+      "alternativeSourceIds": [],
+      "requiredSourceIds": [
+        "voice-loan.source.account"
+      ]
+    },
+    {
+      "id": "voice-loan.evidence.pause",
+      "sourceId": "voice-loan.source.audio",
+      "title": "语音停顿不自然",
+      "explanation": "原语音停顿衔接或教学检测中的停顿指标提供依据。",
+      "isKey": true,
+      "scoreWeight": 10,
+      "alternativeSourceIds": [
+        "voice-loan.source.detection"
+      ],
+      "requiredSourceIds": []
+    },
+    {
+      "id": "voice-loan.evidence.refuse-callback",
+      "sourceId": "voice-loan.source.refusal",
+      "title": "拒绝原号码回拨",
+      "explanation": "消息要求不要回拨原号码，只催促转账。",
+      "isKey": true,
+      "scoreWeight": 10,
+      "alternativeSourceIds": [],
+      "requiredSourceIds": []
+    }
+  ],
+  "permissions": [
+    {
+      "id": "voice-loan.permission.camera",
+      "purpose": "拍照验身份",
+      "category": "Camera",
+      "scoreWeight": 4,
+      "scopes": [
+        "Full"
+      ],
+      "intentRules": [
+        {
+          "intentId": "voice-loan.intent.verify",
+          "allowedScopes": [],
+          "acceptsDenied": true,
+          "riskWeights": [
+            {
+              "scope": "Full",
+              "weight": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "voice-loan.permission.photos",
+      "purpose": "上传支付截图",
+      "category": "Photos",
+      "scoreWeight": 4,
+      "scopes": [
+        "SelectedPhotos",
+        "AllPhotos"
+      ],
+      "intentRules": [
+        {
+          "intentId": "voice-loan.intent.verify",
+          "allowedScopes": [],
+          "acceptsDenied": true,
+          "riskWeights": [
+            {
+              "scope": "SelectedPhotos",
+              "weight": 10
+            },
+            {
+              "scope": "AllPhotos",
+              "weight": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "voice-loan.permission.microphone",
+      "purpose": "声音验证",
+      "category": "Microphone",
+      "scoreWeight": 4,
+      "scopes": [
+        "Full"
+      ],
+      "intentRules": [
+        {
+          "intentId": "voice-loan.intent.verify",
+          "allowedScopes": [],
+          "acceptsDenied": true,
+          "riskWeights": [
+            {
+              "scope": "Full",
+              "weight": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "voice-loan.permission.contacts",
+      "purpose": "匹配好友",
+      "category": "Contacts",
+      "scoreWeight": 5,
+      "scopes": [
+        "Full"
+      ],
+      "intentRules": [
+        {
+          "intentId": "voice-loan.intent.verify",
+          "allowedScopes": [],
+          "acceptsDenied": true,
+          "riskWeights": [
+            {
+              "scope": "Full",
+              "weight": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "voice-loan.permission.sms",
+      "purpose": "自动读验证码",
+      "category": "Sms",
+      "scoreWeight": 5,
+      "scopes": [
+        "Full"
+      ],
+      "intentRules": [
+        {
+          "intentId": "voice-loan.intent.verify",
+          "allowedScopes": [],
+          "acceptsDenied": true,
+          "riskWeights": [
+            {
+              "scope": "Full",
+              "weight": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "voice-loan.permission.location",
+      "purpose": "确认所在地区",
+      "category": "Location",
+      "scoreWeight": 4,
+      "scopes": [
+        "Full"
+      ],
+      "intentRules": [
+        {
+          "intentId": "voice-loan.intent.verify",
+          "allowedScopes": [],
+          "acceptsDenied": true,
+          "riskWeights": [
+            {
+              "scope": "Full",
+              "weight": 15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "voice-loan.permission.background",
+      "purpose": "持续验证",
+      "category": "BackgroundActivity",
+      "scoreWeight": 4,
+      "scopes": [
+        "Full"
+      ],
+      "intentRules": [
+        {
+          "intentId": "voice-loan.intent.verify",
+          "allowedScopes": [],
+          "acceptsDenied": true,
+          "riskWeights": [
+            {
+              "scope": "Full",
+              "weight": 15
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "verificationOptions": [
+    {
+      "id": "voice-loan.verify.original",
+      "text": "通过原联系方式联系本人",
+      "reliable": true,
+      "feedback": "可靠；虚拟原联系人回复：“我没有借钱，也没换账号。先别转，保留消息。”"
+    },
+    {
+      "id": "voice-loan.verify.current-chat",
+      "text": "在当前聊天里追问",
+      "reliable": false,
+      "feedback": "不可靠；“仍由同一个账号回答，身份没有独立确认。”"
+    },
+    {
+      "id": "voice-loan.verify.new-number",
+      "text": "联系对方新发的号码",
+      "reliable": false,
+      "feedback": "不可靠；“号码也由对方提供，不能独立核实。”"
+    },
+    {
+      "id": "voice-loan.verify.voice-only",
+      "text": "听起来像本人就相信",
+      "reliable": false,
+      "feedback": "不可靠；“声音相似不能确认身份。”"
+    }
+  ],
+  "riskOptions": [
+    {
+      "id": "voice-loan.class.impersonation",
+      "text": "冒充身份诈骗",
+      "isCorrect": true
+    },
+    {
+      "id": "voice-loan.class.normal",
+      "text": "正常好友借款",
+      "isCorrect": false
+    },
+    {
+      "id": "voice-loan.class.permission-only",
+      "text": "只有权限问题",
+      "isCorrect": false
+    }
+  ],
+  "dispositionOptions": [
+    {
+      "id": "voice-loan.disposition.verify-refuse",
+      "text": "原联系方式核实，拒绝转账并留证",
+      "kind": "RefuseTransferAndPreserve",
+      "isCorrect": true,
+      "isImmediateFailure": false,
+      "effect": "None"
+    },
+    {
+      "id": "voice-loan.disposition.transfer",
+      "text": "立即转账",
+      "kind": "TransferImmediately",
+      "isCorrect": false,
+      "isImmediateFailure": true,
+      "effect": "None"
+    },
+    {
+      "id": "voice-loan.disposition.keep-asking",
+      "text": "继续向当前账号追问",
+      "kind": "QuestionCurrentAccount",
+      "isCorrect": false,
+      "isImmediateFailure": false,
+      "effect": "None"
+    },
+    {
+      "id": "voice-loan.disposition.follow-link",
+      "text": "按对方链接做核验",
+      "kind": "FollowUntrustedLink",
+      "isCorrect": false,
+      "isImmediateFailure": false,
+      "effect": "None"
+    }
+  ]
+}
