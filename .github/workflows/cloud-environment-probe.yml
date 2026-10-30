@@ -1,0 +1,48 @@
+# 说明：在 GitHub 标准 Windows 云主机上探测团结构建前置条件，不读取凭据或改动已有打包工作流。
+name: Cloud environment probe
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/cloud-environment-probe.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: windows-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Inspect clean cloud environment
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $editor = Get-Command Tuanjie.exe -ErrorAction SilentlyContinue
+          $git = Get-Command git -ErrorAction SilentlyContinue
+          $java = Get-Command java -ErrorAction SilentlyContinue
+          $sdk = if ($env:ANDROID_HOME -and (Test-Path -LiteralPath $env:ANDROID_HOME)) { 'available' } else { 'not found' }
+          $project = Test-Path -LiteralPath 'UnityProject/ProjectSettings/ProjectVersion.txt'
+          $official = 'unreachable'
+          try {
+            $response = Invoke-WebRequest -Uri 'https://docs.unity.cn/cn/tuanjiemanual/Manual/InstallingUnity.html' -TimeoutSec 30 -UseBasicParsing
+            $official = "HTTP $($response.StatusCode)"
+          } catch { $official = "unreachable: $($_.Exception.GetType().Name)" }
+          $drive = Get-PSDrive -Name C
+          $editorStatus = if ($editor) { 'found on PATH' } else { 'not found on PATH' }
+          $gitStatus = if ($git) { 'available' } else { 'not found' }
+          $javaStatus = if ($java) { 'available' } else { 'not found' }
+          $lines = @(
+            '## GitHub Windows cloud environment',
+            "- Checked-out Unity project: $project",
+            "- Tuanjie editor: $editorStatus",
+            "- Git: $gitStatus",
+            "- Java: $javaStatus",
+            "- Android SDK: $sdk",
+            "- Available C drive: $([math]::Round($drive.Free / 1GB, 1)) GiB",
+            "- Official Tuanjie installation documentation: $official",
+            '- This is an environment probe only; no editor installation, activation, APK build, or release was performed.'
+          )
+          $lines | Tee-Object -FilePath $env:GITHUB_STEP_SUMMARY -Append
+          if (!$project -or !$git) { throw 'Cloud runner could not access the project or Git.' }
